@@ -5,6 +5,14 @@ Bookstore web api with nodejs and express
 This API is hosted on heroku
 [https://node-bookstore-api.herokuapp.com/](https://node-bookstore-api.herokuapp.com/)
 
+## Packages
+
+* express
+* body-parser
+* mongoose
+* jsonwebtoken
+* cors
+
 ## Routes
 
 * /auth
