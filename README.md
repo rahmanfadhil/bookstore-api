@@ -1,6 +1,6 @@
 # node-bookstore-api (BETA)
 
-Bookstore web api with nodejs and express
+Bookstore web api with nodejs, express, and mongodb
 
 This API is hosted on heroku
 [https://node-bookstore-api.herokuapp.com/](https://node-bookstore-api.herokuapp.com/)
