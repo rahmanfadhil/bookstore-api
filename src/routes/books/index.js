@@ -3,7 +3,7 @@ const router = express.Router()
 
 const Books = require('./../../models/books')
 
-router.use(require('./../../middlewares/verify-token'))
+const verify_token = require('./../../middlewares/verify-token')
 
 router.get('/', (req, res) => {
   Books.find((err, data) => {
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
   })
 })
 
-router.post('/', (req, res) => {
+router.post('/', verify_token, (req, res) => {
   const bookData = {
     title: req.body.title,
     description: req.body.description,
@@ -43,7 +43,7 @@ router.route('/:id')
     }
   })
 })
-.put((req, res) => {
+.put(verify_token, (req, res) => {
   Books.update({ _id: req.params.id }, req.body, (err, data) => {
     if(!err){
       res.send({ text: 'success', msg: data })
@@ -52,7 +52,7 @@ router.route('/:id')
     }
   })
 })
-.delete((req, res) => {
+.delete(verify_token, (req, res) => {
   Books.remove({ _id: req.params.id }, (err, data) => {
     if(!err){
       res.send({ text: 'success', msg: data })
