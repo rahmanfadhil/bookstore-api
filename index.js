@@ -7,7 +7,7 @@ const cors = require('cors')
 const app = express()
 
 // Connect to database
-mongoose.connect('mongodb://localhost/bookstore')
+mongoose.connect("mongodb://admin:12345@ds155160.mlab.com:55160/bookstore")
 
 // Middlewares
 app.use(cors())
